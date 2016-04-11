@@ -24,5 +24,6 @@
     <dubbo:protocol name="rest" port="8888" threads="500" contextpath="services" server="tomcat" accepts="500"
                     extension="com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
     <dubbo:service interface="com.cn.hash.server.record.service.BillService" ref="billServiceImpl" protocol="rest"/>
+    <dubbo:service interface="com.cn.hash.server.client.validation.pic.service.ValidationService" ref="validationServiceImpl" protocol="rest"/>
 
 </beans>

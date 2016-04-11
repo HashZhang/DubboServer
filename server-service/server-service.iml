@@ -102,6 +102,7 @@
     <orderEntry type="library" name="Maven: org.objenesis:objenesis:2.1" level="project" />
     <orderEntry type="library" name="Maven: de.javakaffee:kryo-serializers:0.26" level="project" />
     <orderEntry type="library" name="Maven: de.ruedigermoeller:fst:1.55" level="project" />
+    <orderEntry type="library" name="Maven: net.pusuo:patchca:0.5.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-context:3.2.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aop:3.2.9.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-beans:3.2.9.RELEASE" level="project" />

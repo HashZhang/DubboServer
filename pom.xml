@@ -74,6 +74,7 @@
         <mysql-connector-java.version>5.1.38</mysql-connector-java.version>
         <druid.version>0.2.20</druid.version>
         <aspectjweaver.version>1.7.2</aspectjweaver.version>
+        <patchca_version>0.5.0</patchca_version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -320,6 +321,12 @@
                 <artifactId>spring-test</artifactId>
                 <version>${org.springframework.version}</version>
                 <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>net.pusuo</groupId>
+                <artifactId>patchca</artifactId>
+                <version>${patchca_version}</version>
             </dependency>
 
         </dependencies>
