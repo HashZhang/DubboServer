@@ -19,14 +19,38 @@
       </profile>
       <profile default="false" name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="server-client" />
         <module name="server-dao" />
         <module name="server-manager" />
         <module name="server-service" />
+        <module name="server-zk" />
+      </profile>
+      <profile default="false" name="Annotation profile for Mycat-server" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Annotation profile for server-netty" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="server-netty" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Mycat-server" target="1.7" />
+      <module name="server" target="1.5" />
+      <module name="server-client" target="1.5" />
+      <module name="server-dao" target="1.5" />
+      <module name="server-manager" target="1.5" />
+      <module name="server-netty" target="1.7" />
+      <module name="server-service" target="1.5" />
+      <module name="server-zk" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

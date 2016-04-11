@@ -15,7 +15,7 @@ import java.util.List;
 public class BillServiceImpl implements BillService {
     @Autowired
     BillManager billManager;
-    @Override
+
     public List<BillKind> getAllBillKinds() {
         return billManager.returnAllBillKinds();
     }
