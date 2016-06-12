@@ -12,6 +12,7 @@
         <module>server-service</module>
         <module>server-zk</module>
         <module>server-netty</module>
+        <module>server-web</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -25,7 +26,7 @@
         <org.springframework.version>3.2.9.RELEASE</org.springframework.version>
         <dubbo_version>2.8.4</dubbo_version>
         <javassist_version>3.15.0-GA</javassist_version>
-        <netty_version>3.7.0.Final</netty_version>
+        <netty_version>5.0.0.Alpha2</netty_version>
         <mina_version>1.1.7</mina_version>
         <grizzly_version>2.1.4</grizzly_version>
         <httpclient_version>4.2.1</httpclient_version>
@@ -74,7 +75,10 @@
         <mysql-connector-java.version>5.1.38</mysql-connector-java.version>
         <druid.version>0.2.20</druid.version>
         <aspectjweaver.version>1.7.2</aspectjweaver.version>
+        <!-- pic validation -->
         <patchca_version>0.5.0</patchca_version>
+        <!-- encoding and decoding -->
+        <protobuf_version>2.6.1</protobuf_version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -90,7 +94,7 @@
             </dependency>
             <dependency>
                 <groupId>io.netty</groupId>
-                <artifactId>netty</artifactId>
+                <artifactId>netty-all</artifactId>
                 <version>${netty_version}</version>
             </dependency>
             <dependency>
@@ -322,13 +326,18 @@
                 <version>${org.springframework.version}</version>
                 <scope>test</scope>
             </dependency>
-
+            <!-- pic validation -->
             <dependency>
                 <groupId>net.pusuo</groupId>
                 <artifactId>patchca</artifactId>
                 <version>${patchca_version}</version>
             </dependency>
-
+            <!-- encoding and decoding -->
+            <dependency>
+                <groupId>com.google.protobuf</groupId>
+                <artifactId>protobuf-java</artifactId>
+                <version>${protobuf_version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <build>

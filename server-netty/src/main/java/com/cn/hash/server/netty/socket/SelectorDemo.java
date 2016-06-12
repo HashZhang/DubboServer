@@ -29,17 +29,22 @@ public class SelectorDemo {
     }
 
     public void startServer() throws IOException {
+        //初始化ServerSocketChannel,以及它的selector
         serverSocketChannel = ServerSocketChannel.open();
         serverSocketChannel.socket().bind(new InetSocketAddress(HOST, PORT));
         serverSocketChannel.configureBlocking(false);
         selector = Selector.open();
+        //在selector上注册ServerSocketChannel接受连接事件
         serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
         while (true) {
+            //监听是否有连接事件，
             if (selector.select(100) > 0) {
                 Set<SelectionKey> selectionKeys = selector.selectedKeys();
                 for (SelectionKey selectionKey : selectionKeys) {
                     if (selectionKey != null && selectionKey.isAcceptable()) {
-                        new Thread(new Read(((ServerSocketChannel) selectionKey.channel()).accept())).start();
+                        //将接受的channel交给一个新的线程处理，之后继续监听连接事件
+                        //这个channel会在businessThread的selector上注册读写事件，进行进一步操作
+                        new Thread(new BusinessThread(((ServerSocketChannel) selectionKey.channel()).accept())).start();
                     }
                     selectionKeys.remove(selectionKey);
                 }
@@ -57,11 +62,11 @@ public class SelectorDemo {
     }
 
 
-    private class Read implements Runnable {
+    private class BusinessThread implements Runnable {
         private SocketChannel socketChannel;
         private Selector selector;
 
-        private Read(SocketChannel socketChannel) throws IOException {
+        private BusinessThread(SocketChannel socketChannel) throws IOException {
             this.socketChannel = socketChannel;
             this.socketChannel.configureBlocking(false);
             selector = Selector.open();

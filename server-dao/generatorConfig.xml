@@ -22,8 +22,8 @@
         </commentGenerator>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://112.74.88.106:3306/record?useUnicode=true&amp;charaterEncoding=utf-8"
-                        userId="record" password="kingzhx9">
+                        connectionURL="jdbc:mysql://10.202.44.17:3306/incsgsana?useUnicode=true&amp;charaterEncoding=utf-8"
+                        userId="incsgsana" password="incsgsana">
         </jdbcConnection>
 
         <javaTypeResolver>
@@ -71,15 +71,11 @@
 		  delimitIdentifiers CDATA #IMPLIED
 		  delimitAllColumns CDATA #IMPLIED
          -->
-        <table schema="" tableName="bill" domainObjectName="Bill" modelType="flat"
+        <table schema="" tableName="ops_evaluate_stat_result" domainObjectName="ops_evaluate_stat_result" modelType="flat"
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false">
         </table>
-        <table schema="" tableName="bill_kind" domainObjectName="BillKind" modelType="flat"
-               enableCountByExample="false" enableUpdateByExample="false"
-               enableDeleteByExample="false" enableSelectByExample="false"
-               selectByExampleQueryId="false">
-        </table>
+
     </context>
 </generatorConfiguration>

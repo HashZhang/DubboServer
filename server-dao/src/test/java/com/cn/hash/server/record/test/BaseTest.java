@@ -1,7 +1,8 @@
 package com.cn.hash.server.record.test;
 
 import com.cn.hash.server.record.dao.domain.BillKind;
-import com.cn.hash.server.record.dao.mapper.BillKindMapper;
+import com.cn.hash.server.record.dao.mapper.ops_evaluate_stat_resultMapper;
+import com.cn.hash.server.record.dao.domain.ops_evaluate_stat_result;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -14,18 +15,16 @@ import java.util.UUID;
 /**
  * Created by Hash ZHANG on 2016/4/2.
  */
-@ContextConfiguration(locations = { "/test-dao.xml" })
-@TestExecutionListeners(value={TransactionalTestExecutionListener.class})
+@ContextConfiguration(locations = {"/test-dao.xml"})
+@TestExecutionListeners(value = {TransactionalTestExecutionListener.class})
 public class BaseTest extends AbstractJUnit4SpringContextTests {
     @Autowired
-    BillKindMapper billKindMapper;
+    ops_evaluate_stat_resultMapper ops_evaluate_stat_resultMapper;
 
     @Test
-    public void testBillKind(){
-        BillKind billKind = new BillKind();
-        billKind.setId(String.valueOf(UUID.randomUUID()));
-        billKind.setKind("test");
-        billKind.setUserId("test");
-        billKindMapper.insertSelective(billKind);
+    public void testBillKind() {
+        ops_evaluate_stat_result ops_evaluate_stat_result = new ops_evaluate_stat_result();
+        ops_evaluate_stat_result.setId(19);
+        ops_evaluate_stat_resultMapper.insertSelective(ops_evaluate_stat_result);
     }
 }
